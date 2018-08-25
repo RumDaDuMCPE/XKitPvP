@@ -3,13 +3,11 @@
 namespace KitPvP\arena\pvp;
 
 
-use KitPvP\Loader;
+use KitPvP\BaseEvent;
 use onebone\economyapi\EconomyAPI;
-use pocketmine\entity\Entity;
 use pocketmine\entity\Human;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\event\Listener;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\DoubleTag;
 use pocketmine\nbt\tag\FloatTag;
@@ -19,7 +17,7 @@ use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\utils\TextFormat;
 
-class CustomKill implements Listener {
+class CustomKill extends BaseEvent {
 
     public $titles = [
         0 => [
@@ -36,7 +34,7 @@ class CustomKill implements Listener {
         if ($event->getEntity() instanceof Player) {
             if ($event instanceof EntityDamageByEntityEvent) {
                 $player = $event->getEntity();
-                if ($this->getLoader()->getRegion(0)->isInAnyArena($player)) {
+                if ($this->getPlugin()->getRegion(0)->isInAnyArena($player)) {
                     $damager = $event->getDamager();
                     $damage = $event->getFinalDamage();
                     if (($player->getHealth() - $damage) < 0.5) { // Check if damage dealt would kill player.
@@ -49,14 +47,7 @@ class CustomKill implements Listener {
             }
         }
     }
-
-    /**
-     * @return Loader
-     */
-    private function getLoader() : Loader {
-        return Loader::getInstance();
-    }
-
+    
     /**
      * @param Player $player
      */
