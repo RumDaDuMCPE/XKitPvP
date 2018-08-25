@@ -14,17 +14,20 @@
       <file leaf-file-name="Loader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/KitPvP/Loader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="476">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="e#27#58#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpawnRegion.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SpawnRegion.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/KitPvP/regions/SpawnRegion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="59" column="13" lean-forward="true" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
+            <state relative-caret-position="214">
+              <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
               <folding>
                 <element signature="e#35#69#0#PHP" expanded="true" />
               </folding>
@@ -32,11 +35,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AxisAlignedBB.php" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/PocketMine-MP-master/src/pocketmine/math/AxisAlignedBB.php">
+      <file leaf-file-name="CustomKill.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/KitPvP/arena/pvp/CustomKill.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="683">
-              <caret line="422" lean-forward="true" selection-start-line="422" selection-end-line="422" />
+            <state relative-caret-position="381">
+              <caret line="114" column="27" selection-start-line="114" selection-start-column="27" selection-end-line="114" selection-end-column="27" />
+              <folding>
+                <element signature="e#37#55#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Human.php" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/PocketMine-MP-master/src/pocketmine/entity/Human.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="133" column="20" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -51,8 +66,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/KitPvP/Loader.php" />
         <option value="$PROJECT_DIR$/src/KitPvP/regions/SpawnRegion.php" />
+        <option value="$PROJECT_DIR$/src/KitPvP/Loader.php" />
+        <option value="$PROJECT_DIR$/src/KitPvP/arena/pvp/CustomKill.php" />
       </list>
     </option>
   </component>
@@ -68,11 +84,12 @@
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$USER_HOME$/Desktop/PocketMine-MP-master" />
+      <path value="$USER_HOME$/Desktop/EconomyS-master/EconomyAPI" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="477" />
-    <option name="y" value="268" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="835" />
+    <option name="y" value="230" />
     <option name="width" value="980" />
     <option name="height" value="930" />
   </component>
@@ -112,6 +129,14 @@
               <item name="KitPvP-Core" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="KitPvP" type="462c0819:PsiDirectoryNode" />
+              <item name="arena" type="462c0819:PsiDirectoryNode" />
+              <item name="pvp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KitPvP-Core" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KitPvP-Core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="KitPvP" type="462c0819:PsiDirectoryNode" />
               <item name="regions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -123,7 +148,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/EconomyS-master/EconomyAPI" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
@@ -150,12 +175,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1535174888774</updated>
-      <workItem from="1535174890432" duration="7823000" />
+      <workItem from="1535174890432" duration="11729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7823000" />
+    <option name="totallyTimeSpent" value="11729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -192,13 +217,6 @@
     <entry file="file://$PROJECT_DIR$/src/KitPvP/regions.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/KitPvP/Loader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/PocketMine-MP-master/src/pocketmine/math/AxisAlignedBB.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="683">
@@ -213,12 +231,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="34">
+            <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KitPvP/Loader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#27#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/KitPvP/regions/SpawnRegion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="59" column="13" lean-forward="true" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
+        <state relative-caret-position="214">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
           <folding>
             <element signature="e#35#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/PocketMine-MP-master/src/pocketmine/entity/Human.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="133" column="20" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KitPvP/arena/pvp/CustomKill.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="114" column="27" selection-start-line="114" selection-start-column="27" selection-end-line="114" selection-end-column="27" />
+          <folding>
+            <element signature="e#37#55#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
