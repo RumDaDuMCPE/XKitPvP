@@ -5,6 +5,7 @@ namespace KitPvP\player;
 
 use pocketmine\Player;
 use pocketmine\scheduler\Task;
+use pocketmine\utils\TextFormat;
 
 class TitleTask extends Task {
 
@@ -18,8 +19,8 @@ class TitleTask extends Task {
     public function onRun(int $currentTick)
     {
         $title = '.l.fX.cFurnus';
-        $subtitle = '.eWelcome'.($this->player->hasPlayedBefore() ? ' back' : '').', %player%';
-        $this->player->addTitle($title, str_replace('%player', $this->player->getNameTag(), $subtitle), 20, 20 * 3, 20);
+        $subtitle = '.eWelcome'.($this->player->hasPlayedBefore() ? ' back' : '').', .l.b%player%';
+        $this->player->addTitle(TextFormat::colorize($title, '.'), TextFormat::colorize(str_replace('%player%', $this->player->getNameTag(), $subtitle), '.'), 20, 20 * 3, 20);
     }
 
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="eb10ae75-db33-4a2b-a39d-954a462c2ea7" name="206.189.142.1" url="http://206.189.142.1">
+        <fileTransfer host="206.189.142.1" port="22" rootFolder="/MCPE" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

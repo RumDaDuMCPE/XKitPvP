@@ -3,63 +3,153 @@
 namespace KitPvP\regions;
 
 
-use pocketmine\math\AxisAlignedBB;
 use pocketmine\Player;
 
 class SpawnRegion {
 
-    private $portals = [
-        0 => ['x' => [231,233], 'z' => [260]],
-        1 => ['x' => [279,281], 'z' => [252]],
-        2 => ['x' => [260], 'z' => [279,281]],
-        3 => ['x' => [252], 'z' => [279,281]],
-        4 => ['x' => [252], 'z' => [279,281]],
-        5 => ['z' => [232,234], 'x' => [260]]
-    ];
-
-
-    /*
-     * NOTE: Player class is an instance of Position.
-     *       Player -> Human > Creature > Living > Entity -> Position.
-     */
-
-    /**
-     * @param Player $vector3
-     * @return bool
-     */
-    public function inSpawn(Player $vector3) : bool {
-        $x = [212, 300];
-        $y = [0, 700];
-        $z = [217, 300];
-        $axis = new AxisAlignedBB(min($x), max($x), min($y), max($y), min($z), max($z));
-        if ($axis->isVectorInside($vector3)) {
+    public function enteringSpawnPortal(Player $player) {
+        /*
+         * HOLY FUCK
+         */
+        if ($this->portalOne($player) || $this->portalTwo($player) || $this->portalThree($player) || $this->portalFour($player) || $this->portalFive($player) || $this->portalSix($player) || $this->portalSeven($player) || $this->portalEight($player)) {
             return true;
         }
         return false;
     }
 
-    /**
-     * @param Player $vector3
-     * @return bool
-     */
-    public function enteringPortal(Player $vector3) : bool
-    {
-        $y = [0, 700];
-        for ($i = 0; $i < count($this->portals); $i++) {
-            $x = $this->portals[$i]['x'];
-            $z = $this->portals[$i]['z'];
-            $x = min($x);
-            $X = max($x);
-            $z = min($z);
-            $Z = max($z);
-            $axis = [new AxisAlignedBB($x, $X, min($y), max($y), $z, $Z)];
-            for ($i = 0; $i < count($axis); $i++) {
-                if ($axis[$i]->isVectorInside($vector3)) {
-                    return true;
-                }
-            }
+    public function portalOne(Player $player) {
+        $x = $player->getX();
+        $z = $player->getZ();
+        $xx = [231,233];
+        $zz = 260;
+        if ($x >= min($xx) && $x <= max($xx) && $z > $zz - 1 && $z < $zz + 1) {
+            return true;
+        } else {
+            return false;
         }
-        return false;
     }
+
+    public function portalTwo(Player $player) {
+        $x = $player->getX();
+        $z = $player->getZ();
+        $xx = [279,281];
+        $zz = 252;
+        if ($x <= max($xx) && $x >= min($xx) && $z > $zz - 1 && $z < $zz + 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function portalThree(Player $player) {
+        $x = $player->getX();
+        $z = $player->getZ();
+        $xx = 260;
+        $zz = [279,281];
+        if ($z >= min($zz) && $z <= max($zz) && $x > $xx - 1 && $x < $xx + 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function portalFour(Player $player) {
+        $x = $player->getX();
+        $z = $player->getZ();
+        $xx = 252;
+        $zz = [279,281];
+        if ($z >= min($zz) && $z <= max($zz) && $x > $xx - 1 && $x < $xx + 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function portalFive(Player $player) {
+        $x = $player->getX();
+        $z = $player->getZ();
+        $xx = [231,233];
+        $zz = 252;
+        if ($x >= min($xx) && $x <= max($xx) && $z > $zz - 1 && $z < $zz + 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function portalSix(Player $player) {
+        $x = $player->getX();
+        $z = $player->getZ();
+        $zz = [232,234];
+        $xx = 260;
+        if ($z >= 232 && $z <= 234 && $x > $xx - 1 && $x < $xx + 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function portalSeven(Player $player) {
+        $x = $player->getX();
+        $z = $player->getZ();
+        $xx = 252;
+        $zz = [232,234];
+        if ($z >= min($zz) && $z <= max($zz) && $x > $xx - 1 && $x < $xx + 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function portalEight(Player $player) {
+        $x = $player->getX();
+        $z = $player->getZ();
+        $xx = [279,281];
+        $zz = 260;
+        if ($x >= min($xx) && $x <= max($xx) && $z > $zz - 1 && $z < $zz + 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function isInSpawn(Player $player) {
+        $x = $player->getX();
+        $y = $player->getY();
+        $z = $player->getZ();
+        $xx = [212, 300];
+        $yy = 84;
+        $zz = [217, 300];
+        if($x >= min($xx) and $x <= max($xx) and $z >= min($zz) and $z <= max($zz)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function isInKitRoom(Player $player) {
+        $x = $player->getX();
+        $z = $player->getZ();
+        $xx = [383,325];
+        $zz = [348,375];
+        if ($x >= min($xx) && $x <= max($xx) && $z >= min($zz) && $z <= max($zz)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function isInVIPRoom(Player $player) {
+        $x = $player->getX();
+        $z = $player->getZ();
+        $xx = [326,354];
+        $zz = [372,350];
+        if ($x >= min($xx) && $x <= max($xx) && $z >= min($zz) && $z <= max($zz)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }

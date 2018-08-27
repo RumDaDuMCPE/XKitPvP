@@ -31,10 +31,12 @@ class CustomKill extends BaseEvent {
      */
     public function catchDamage(EntityDamageEvent $event)
     {
+        $player = $event->getEntity();
+        $cl = $this->getPlugin()->getRegion(1);
         if ($event->getEntity() instanceof Player) {
             if ($event instanceof EntityDamageByEntityEvent) {
                 $player = $event->getEntity();
-                if ($this->getPlugin()->getRegion(0)->isInAnyArena($player)) {
+                if ($this->getPlugin()->getRegion(1)->isInAnyArena($player)) {
                     $damager = $event->getDamager();
                     $damage = $event->getFinalDamage();
                     if (($player->getHealth() - $damage) < 0.5) { // Check if damage dealt would kill player.
@@ -47,7 +49,7 @@ class CustomKill extends BaseEvent {
             }
         }
     }
-    
+
     /**
      * @param Player $player
      */
@@ -104,30 +106,6 @@ class CustomKill extends BaseEvent {
      * @param Player $entity
      */
     private function spawnDeadEntity(Player $entity) {
-        $nbt = new CompoundTag("", [
-                "Pos" => new ListTag("Pos", [
-                    new DoubleTag("", $entity->getX()),
-                    new DoubleTag("", $entity->getY()+1),
-                    new DoubleTag("", $entity->getZ())
-                ]),
-                "Motion" => new ListTag("Motion", [
-                    new DoubleTag("", 0),
-                    new DoubleTag("", 0),
-                    new DoubleTag("", 0)
-                ]),
-                "Rotation" => new ListTag("Rotation", [
-                    new FloatTag("", $entity->getPitch()),
-                    new FloatTag("", $entity->getYaw())
-                ]),
-                "Skin" => new CompoundTag("Skin", [
-                    "Data" => new StringTag("Data", $entity->getSkin()),
-                ])
-            ]
-        );
-
-        $npc = new Human($entity->getLevel(), $nbt);
-        $npc->setDataFlag(Human::DATA_PLAYER_FLAGS, Human::DATA_PLAYER_FLAG_SLEEP, true, Human::DATA_TYPE_BYTE);
-        $npc->setNameTag("§c".$entity->getName());
-        $npc->spawnToAll();
+        $this->getPlugin()->getScheduler()->scheduleRepeatingTask(new DeadEntityTask($entity), 20);
     }
 }

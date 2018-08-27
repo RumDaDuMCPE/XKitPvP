@@ -3,15 +3,22 @@
 namespace KitPvP\player;
 
 
+use KitPvP\API;
 use KitPvP\BaseEvent;
 use pocketmine\event\player\PlayerMoveEvent;
 
 class MoveEvent extends BaseEvent {
 
     public function catchMovement(PlayerMoveEvent $event) {
-        if ($this->getPlugin()->getRegion(0)->enteringPortal($event->getPlayer())) {
-            // TODO: Teleport player to kits.
+        $player = $event->getPlayer();
+        if ($this->getPlugin()->getRegion(0)->enteringSpawnPortal($player)) {
+            if ($player->hasPermission('xfurnus.premium')) {
+                $this->getAPI()->teleport($player, 0);
+            } else {
+                $this->getAPI()->teleport($player, 1);
+           }
         }
+        if ($player->y < 40) $player->teleport($player->getLevel()->getSafeSpawn());
     }
 
 }
