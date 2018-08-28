@@ -61,6 +61,7 @@ class CustomKill extends BaseEvent {
         $player->getInventory()->clearAll();
         $player->getArmorInventory()->clearAll();
         if ($player->hasEffects()) $player->removeAllEffects();
+        if ($player->isOnFire()) $player->extinguish();
         $player->setHealth($player->getMaxHealth());
         $player->setFood($player->getMaxFood());
         $player->teleport($player->getLevel()->getSafeSpawn());
